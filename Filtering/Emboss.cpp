@@ -2,18 +2,20 @@
 using namespace QuickCG;
 using namespace std;
 
-#define filterWidth 3
-#define filterHeight 3
+#define filterWidth 5
+#define filterHeight 5
 
 double filter[filterHeight][filterWidth] =
 {
-  0.077847, 0.123317, 0.077847,
-  0.123317, 0.195346, 0.123317,
-  0.077847, 0.123317, 0.077847,
+  -1, -1, -1, -1,  0,
+  -1, -1, -1,  0,  1,
+  -1, -1,  0,  1,  1,
+  -1,  0,  1,  1,  1,
+   0,  1,  1,  1,  1
 };
 
 double factor = 1.0;
-double bias = 0.0;
+double bias = 128.0;
 
 int main(int argc, char *argv[])
 {
